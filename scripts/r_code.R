@@ -1,3 +1,13 @@
+#### Preamble ####
+# Purpose: Download, address and save Data from Spotify
+# Author: Yizhe Chen
+# Date: 10 OCT 2024
+# Contact: yz.chen@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: N/A
+# Any other information needed? No
+
+
 # Load spotifyr package
 install.packages('spotifyr')
 library(spotifyr)
