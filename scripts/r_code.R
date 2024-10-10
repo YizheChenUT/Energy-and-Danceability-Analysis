@@ -13,7 +13,7 @@ access_token <- get_spotify_access_token()
 artist <- search_spotify('Taylor Swift', type = 'artist')
 
 # Get Taylor Swift ID
-artist_id <- artist$id[1]
+artist_id <- artist$id[1].
 
 # Get album information
 albums <- get_artist_albums(artist_id)
