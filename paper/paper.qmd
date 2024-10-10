@@ -1,0 +1,78 @@
+---
+title: "Energy and Danceability Analysis of Taylor Swift's '1989' Album"
+# subtitle:
+author: 
+  - Yizhe Chen
+thanks: "Code and data are available at: https://github.com/YizheChenUT/STA304-5-Energy-and-Danceability-Analysis.git"
+date: today
+date-format: long
+abstract: "In this analysis, we examine the relationship between energy and danceability for the songs on Taylor Swift's '1989' album using data obtained via the Spotify API. We extract song-level audio features and explore how these characteristics vary across tracks. A linear regression analysis is conducted to identify trends, showing a slight negative relationship between energy and danceability for these songs. The findings suggest that higher-energy tracks tend to be less danceable within this album."
+format: pdf
+number-sections: true
+toc: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(ggplot2)
+```
+
+# Introduction
+Music is often categorized by its acoustic characteristics, with energy and danceability being two significant factors that influence how audiences perceive a song. Taylor Swift's "1989" is a commercially successful album that reflects a shift from her country music roots to a pop-focused sound. In this report, we explore the relationship between energy and danceability for the songs on "1989", using data retrieved from Spotify's API [@spotify1]. By analyzing these features, we aim to uncover patterns that might reveal insights about the album's musical composition.
+
+# Data {#sec-data}
+The data for this analysis was obtained using the Spotify API, specifically using the `spotifyr` package in R [@spotify][@citeR]. We extracted the audio features for each track on Taylor Swift's fourth studio album, *1989*, which includes hits like "Shake It Off" and "Blank Space" [@taylorSwift1989]. Audio features such as energy, danceability, tempo, and more were collected for all the tracks in the album. The focus of this analysis is on two specific features: **energy** and **danceability**.
+
+## Summary of the Data
+- **Energy**: A measure from 0.0 to 1.0 representing intensity and activity, where higher values indicate more energetic songs.
+- **Danceability**: A measure from 0.0 to 1.0 indicating how suitable a track is for dancing based on tempo, rhythm stability, beat strength, and overall regularity.
+
+# Results {#sec-result}
+The following scatter plot displays the relationship between energy and danceability for the tracks on the *1989* album, generated using ggplot2 [@ggplot2]. The linear regression line suggests a slight negative correlation between the two variables.
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+# Read data from CSV
+audio_features <- read.csv(here::here("data/audio_features.csv"))
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: fig-Energy_vs_Danceability
+#| fig-cap: Energy vs Danceability of Songs on the *1989* album
+
+# Mapping the relationship between energy and danceability
+ggplot(audio_features, aes(x = energy, y = danceability)) +
+  geom_point() +
+   geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(title = "Energy vs Danceability of Songs",
+       x = "Energy",
+       y = "Danceability")
+```
+
+@fig-Energy_vs_Danceability shows that while there is a range of energy levels in the songs, those with higher energy values tend to have slightly lower danceability scores. The regression line reflects this inverse relationship, but the overall trend is relatively weak, with many points dispersed around the line.
+
+# Discussion {#sec-discussion}
+The slight negative correlation between energy and danceability observed in this analysis is interesting. Songs with high energy are generally expected to be more suitable for dancing, but this result suggests the opposite trend for Taylor Swift's 1989 album. This could be due to the nature of pop production on this album, where energetic songs like "Shake It Off" emphasize vocal intensity and complexity, potentially at the expense of regular danceability factors like beat stability [@taylorSwift1989]. On the other hand, more danceable tracks might have a steadier beat and rhythm, but not necessarily high energy.
+
+This result aligns with the diversity of the 1989 album, where Swift experiments with different pop styles, producing tracks that vary significantly in both mood and purpose.
+
+# Conclusion {#sec-conclusion}
+In conclusion, the analysis reveals a subtle inverse relationship between energy and danceability for the songs on Taylor Swift’s 1989 album. While the trend is not strong, it reflects the nuanced nature of the album’s musical production, where songs balance high energy with other compositional choices. Future work could expand this analysis to other features, such as tempo and valence, or compare 1989 with Swift’s other albums to explore broader patterns in her music evolution.
+
+\newpage
+
+# References
+
+
