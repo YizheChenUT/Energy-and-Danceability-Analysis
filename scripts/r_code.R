@@ -13,8 +13,8 @@ install.packages('spotifyr')
 library(spotifyr)
 
 # Set API
-Sys.setenv(SPOTIFY_CLIENT_ID = 'c2bf7e4c0827492795bba5b7131164b2')
-Sys.setenv(SPOTIFY_CLIENT_SECRET = 'bd901802cd2748569213a4ae76d1b8fa')
+Sys.setenv(SPOTIFY_CLIENT_ID = '')
+Sys.setenv(SPOTIFY_CLIENT_SECRET = '')
 
 # Get a Spotify access token
 access_token <- get_spotify_access_token()
