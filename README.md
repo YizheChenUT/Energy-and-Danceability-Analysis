@@ -10,10 +10,10 @@ In this analysis, we examine the relationship between energy and danceability fo
 The repo is structured as:
 
 -   `data` contains the data as obtained from *Spotify API*.
+-   `other` contains details about LLM chat interactions and sketches.
 -   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
 -   `scripts` contains the R scripts used to download and address data.
 
+## Statement on LLM usage
 
-## How to Run
-1. Run `scripts/r_code.R` to download and address data
-2. Run `paper/paper.qmd` to generate the PDF of the paper
+Aspects of the code were written with the help of ChatGPT. Some parts of paper were written with the help of ChatGPT and the entire chat history is available in `other/llm_usage/usage.txt`.
