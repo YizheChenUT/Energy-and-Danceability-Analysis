@@ -30,7 +30,7 @@ Music is often categorized by its acoustic characteristics, with energy and danc
 # Data {#sec-data}
 The data for this analysis was obtained using the Spotify API, specifically using the `spotifyr` package [@spotify] in R language [@citeR]. We extracted the audio features for each track on Taylor Swift's fourth studio album, *1989*, which includes hits like "Shake It Off" and "Blank Space" [@taylorSwift1989]. Audio features such as energy, danceability, tempo, and more were collected for all the tracks in the album. The focus of this analysis is on two specific features: **energy** and **danceability**.
 
-## Summary of the Data
+## Measurement
 - **Energy**: A measure from 0.0 to 1.0 representing intensity and activity, where higher values indicate more energetic songs.
 - **Danceability**: A measure from 0.0 to 1.0 indicating how suitable a track is for dancing based on tempo, rhythm stability, beat strength, and overall regularity.
 
