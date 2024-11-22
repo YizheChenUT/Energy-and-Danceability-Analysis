@@ -1,9 +1,12 @@
 ---
 title: "Energy and Danceability Analysis of Taylor Swift's '1989' Album"
 # subtitle:
-author: 
+author:
+  - Bo Tang
+  - Mingjin Zhan
+  - Qizhou Xie
   - Yizhe Chen
-thanks: "Code and data are available at: https://github.com/YizheChenUT/STA304-5-Energy-and-Danceability-Analysis.git"
+thanks: "Code and data are available at: [https://github.com/YizheChenUT/Energy-and-Danceability-Analysis.git](https://github.com/YizheChenUT/Energy-and-Danceability-Analysis.git)"
 date: today
 date-format: long
 abstract: "In this analysis, we examine the relationship between energy and danceability for the songs on Taylor Swift's '1989' album using data obtained via the Spotify API. We extract song-level audio features and explore how these characteristics vary across tracks. A linear regression analysis is conducted to identify trends, showing a slight negative relationship between energy and danceability for these songs. The findings suggest that higher-energy tracks tend to be less danceable within this album."
@@ -25,7 +28,7 @@ library(ggplot2)
 Music is often categorized by its acoustic characteristics, with energy and danceability being two significant factors that influence how audiences perceive a song. Taylor Swift's "1989" is a commercially successful album that reflects a shift from her country music roots to a pop-focused sound. In this report, we explore the relationship between energy and danceability for the songs on "1989", using data retrieved from Spotify's API [@spotify1]. By analyzing these features, we aim to uncover patterns that might reveal insights about the album's musical composition.
 
 # Data {#sec-data}
-The data for this analysis was obtained using the Spotify API, specifically using the `spotifyr` package in R [@spotify][@citeR]. We extracted the audio features for each track on Taylor Swift's fourth studio album, *1989*, which includes hits like "Shake It Off" and "Blank Space" [@taylorSwift1989]. Audio features such as energy, danceability, tempo, and more were collected for all the tracks in the album. The focus of this analysis is on two specific features: **energy** and **danceability**.
+The data for this analysis was obtained using the Spotify API, specifically using the `spotifyr` package [@spotify] in R language [@citeR]. We extracted the audio features for each track on Taylor Swift's fourth studio album, *1989*, which includes hits like "Shake It Off" and "Blank Space" [@taylorSwift1989]. Audio features such as energy, danceability, tempo, and more were collected for all the tracks in the album. The focus of this analysis is on two specific features: **energy** and **danceability**.
 
 ## Summary of the Data
 - **Energy**: A measure from 0.0 to 1.0 representing intensity and activity, where higher values indicate more energetic songs.
